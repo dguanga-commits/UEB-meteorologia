@@ -215,7 +215,7 @@ st.sidebar.markdown("<h2 style='color: #00F2FE; font-weight: 700; margin-bottom:
 st.sidebar.markdown("<p style='color: #94A3B8; font-size: 0.85rem; margin-top: 0px;'>Programa Experto en Forecasting</p>", unsafe_allow_html=True)
 st.sidebar.markdown("---")
 
-st.sidebar.subheader("<p style='color: #94A3B8;⚙️ Configuración")
+st.sidebar.subheader("<p style='color: #94A3B8; font-size: 0.85rem; margin-top: 0px;'>⚙️ Configuración</p>")
 model_selected = st.sidebar.selectbox(
     "Modelo de Predicción Base",
     options=["XGBoost (Recomendado)", "Random Forest", "LSTM", "SARIMA"],
