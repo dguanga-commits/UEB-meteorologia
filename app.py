@@ -104,7 +104,7 @@ st.markdown("""
         color: #10B981;
     }
     .kpi-delta-down {
-        color: #EF4444;
+        color: #94A3B8;
     }
     
     [data-testid="stSidebar"] {
