@@ -306,7 +306,7 @@ st.sidebar.markdown("""
 - **Predicción:** 2026
 """)
 st.sidebar.markdown("---")
-st.sidebar.markdown("<p style='color: #64748B; font-size: 0.8rem;'>Diseñado por: Deysi Guanga<br>Experto en Forecasting / IA</p>", unsafe_allow_html=True)
+st.sidebar.markdown("<p style='color: #64748B; font-size: 0.8rem;'>Diseñado por: Deysi Guanga<br>Experto en Forecasting </p>", unsafe_allow_html=True)
 
 # ---------------------------------------------------------
 # CUERPO PRINCIPAL
