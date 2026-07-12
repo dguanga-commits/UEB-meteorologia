@@ -17,12 +17,7 @@ import xgboost as xgb
 
 # Configuración de página de Streamlit
 st.set_page_config(
-    page_title="Dashboard Agroclimático Bolívar",
-    page_icon="⛈️",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-# Configuración de tema personalizado
+    # Configuración de tema personalizado
 st.markdown("""
 <style>
     /* Sidebar con fondo claro */
@@ -70,6 +65,12 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
+    page_title="Dashboard Agroclimático Bolívar",
+    page_icon="⛈️",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 # ---------------------------------------------------------
 # ESTILOS CSS PERSONALIZADOS (Glassmorphism & Aesthetics)
 # ---------------------------------------------------------
