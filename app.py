@@ -39,30 +39,6 @@ COLORS = {
     'error': '#EF4444'         # Rojo
 }
 
-# Aplicar al CSS global
-st.markdown(f"""
-<style>
-    /* Forzar fondo claro en el Sidebar */
-    [data-testid="stSidebar"] {{
-        background-color: {COLORS['sidebar_bg']};
-    }}
-    
-    /* Texto del sidebar oscuro para buen contraste */
-    [data-testid="stSidebar"] * {{
-        color: {COLORS['text']} !important;
-    }}
-    
-    /* Título con gradiente */
-    .title-gradient {{
-        background: linear-gradient(90deg, {COLORS['primary']} 0%, {COLORS['secondary']} 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: 700;
-    }}
-</style>
-""", unsafe_allow_html=True)
-
-
 # ---------------------------------------------------------
 # ESTILOS CSS PERSONALIZADOS (Glassmorphism & Aesthetics)
 # ---------------------------------------------------------
