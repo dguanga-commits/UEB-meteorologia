@@ -371,18 +371,18 @@ tabs = st.tabs([
     "⚙️ Simulador Predictivo"
 ])
 
+
 # ==============================================================================
-# NUEVA PESTAÑA 0: PRONÓSTICO 2026
+# PESTAÑA 0: PRONÓSTICO 2026
 # ==============================================================================
 with tabs[0]:
     st.markdown("### 🔮 Pronóstico Climático para el Año 2026")
     st.markdown("Predicciones generadas mediante modelos de Machine Learning entrenados con datos históricos (2016-2023)")
     
-    # Generar predicciones para 2026
-    with st.spinner("Generando predicciones para 2026..."):
-        forecast_2026 = generate_2026_forecast(sim_model_xgb, "XGBoost", days=365)
-    
-    if forecast_2026 is not None:
+    # Verificar que el pronóstico exista
+    if forecast_2026 is None:
+        st.error("❌ No se pudo generar el pronóstico para 2026. Verifique los datos de entrada.")
+    else:
         # Resumen anual
         st.markdown("#### 📊 Resumen Anual 2026")
         
@@ -450,14 +450,12 @@ with tabs[0]:
             plot_bgcolor='rgba(0,0,0,0)',
             xaxis=dict(title="Mes", gridcolor='rgba(255,255,255,0.05)'),
             yaxis=dict(
-                title="Temperatura (°C)",
-                titlefont=dict(color="#EF4444"),
+                title=dict(text="Temperatura (°C)", font=dict(color="#EF4444")),
                 tickfont=dict(color="#EF4444"),
                 gridcolor='rgba(255,255,255,0.05)'
             ),
             yaxis2=dict(
-                title="Precipitación (mm)",
-                titlefont=dict(color="#00F2FE"),
+                title=dict(text="Precipitación (mm)", font=dict(color="#00F2FE")),
                 tickfont=dict(color="#00F2FE"),
                 overlaying='y1',
                 side='right',
@@ -573,7 +571,6 @@ with tabs[0]:
         """, unsafe_allow_html=True)
         
         # Calcular rendimientos estimados basados en predicciones
-        # Usando las correlaciones del modelo VAR
         avg_temp_year = forecast_2026['Temp_Pred'].mean()
         total_rain_year = forecast_2026['Precip_Pred'].sum()
         avg_hum_year = forecast_2026['Hum_Pred'].mean()
@@ -650,7 +647,6 @@ with tabs[0]:
             file_name="predicciones_climaticas_bolivar_2026.csv",
             mime="text/csv"
         )
-
 # ==============================================================================
 # PESTAÑA 1: MAPA Y RESUMEN DEL CLIMA (HISTÓRICO)
 # ==============================================================================
