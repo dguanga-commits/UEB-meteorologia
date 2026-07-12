@@ -21,55 +21,6 @@ st.set_page_config(
     page_icon="⛈️",
     layout="wide",
     initial_sidebar_state="expanded"
-
-     # Configuración de tema personalizado
-st.markdown("""
-<style>
-    /* Sidebar con fondo claro */
-    [data-testid="stSidebar"] {
-        background-color: #f0f2f6;
-        border-right: 1px solid #e0e0e0;
-    }
-    
-    /* Texto del sidebar más oscuro */
-    [data-testid="stSidebar"] * {
-        color: #262730 !important;
-    }
-    
-    /* Títulos del sidebar */
-    [data-testid="stSidebar"] h2, 
-    [data-testid="stSidebar"] h3 {
-        color: #0e1117 !important;
-        font-weight: 700;
-    }
-    
-    /* Texto normal del sidebar */
-    [data-testid="stSidebar"] p, 
-    [data-testid="stSidebar"] li,
-    [data-testid="stSidebar"] .stMarkdown {
-        color: #31333F !important;
-    }
-    
-    /* Select boxes en sidebar */
-    [data-testid="stSidebar"] .stSelectbox > div {
-        background-color: white;
-        color: #262730;
-    }
-    
-    /* Contenido principal con fondo blanco */
-    .stApp {
-        background-color: #ffffff;
-    }
-    
-    /* Tarjetas con sombra suave */
-    .css-1r6slb0 {
-        background-color: #ffffff;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-</style>
-""", unsafe_allow_html=True)
 )
 
 # ---------------------------------------------------------
