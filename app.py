@@ -24,6 +24,46 @@ st.set_page_config(
 )
 
 # ---------------------------------------------------------
+# 2. PALETA DE COLORES PROFESIONAL (PEGA ESTO AQUÍ)
+# ---------------------------------------------------------
+# Colores recomendados
+COLORS = {
+    'primary': '#00F2FE',      # Cyan brillante
+    'secondary': '#4FACFE',    # Azul claro
+    'dark': '#0e1117',         # Negro suave
+    'light': '#ffffff',        # Blanco
+    'sidebar_bg': '#f8f9fa',   # Gris muy claro (para el sidebar)
+    'text': '#262730',         # Gris oscuro (para el texto)
+    'success': '#10B981',      # Verde
+    'warning': '#F59E0B',      # Naranja
+    'error': '#EF4444'         # Rojo
+}
+
+# Aplicar al CSS global
+st.markdown(f"""
+<style>
+    /* Forzar fondo claro en el Sidebar */
+    [data-testid="stSidebar"] {{
+        background-color: {COLORS['sidebar_bg']};
+    }}
+    
+    /* Texto del sidebar oscuro para buen contraste */
+    [data-testid="stSidebar"] * {{
+        color: {COLORS['text']} !important;
+    }}
+    
+    /* Título con gradiente */
+    .title-gradient {{
+        background: linear-gradient(90deg, {COLORS['primary']} 0%, {COLORS['secondary']} 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 700;
+    }}
+</style>
+""", unsafe_allow_html=True)
+
+
+# ---------------------------------------------------------
 # ESTILOS CSS PERSONALIZADOS (Glassmorphism & Aesthetics)
 # ---------------------------------------------------------
 st.markdown("""
