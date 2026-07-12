@@ -193,38 +193,56 @@ sim_model_rf, sim_model_xgb = train_simulator_models()
 # ---------------------------------------------------------
 # SIDEBAR / PANEL DE CONTROL
 # ---------------------------------------------------------
-#st.sidebar.image("https://img.icons8.com/clouds/200/000000/weather.png", width=120)
-st.sidebar.markdown("### ⛈️")
-st.sidebar.markdown("<h2 style='color: #00F2FE; font-weight: 700; margin-bottom: 0px;'>Pronóstico Bolívar</h2>", unsafe_allow_html=True)
-st.sidebar.markdown("<p style='color: #94A3B8; font-size: 0.85rem; margin-top: 0px;'>Trabajo Final - Forecasting</p>", unsafe_allow_html=True)
-st.sidebar.markdown("---")
-
-st.sidebar.subheader("⚙️ Configuración")
-model_selected = st.sidebar.selectbox(
-    "Modelo de Predicción Base",
-    options=["XGBoost (Recomendado)", "Random Forest", "LSTM", "SARIMA"],
-    index=0
-)
-
-model_col_map = {
-    "XGBoost (Recomendado)": "XGBoost",
-    "Random Forest": "Random_Forest",
-    "LSTM": "LSTM",
-    "SARIMA": "SARIMA"
-}
-model_col = model_col_map[model_selected]
-
-st.sidebar.markdown("---")
-st.sidebar.subheader("📍 Estación Base")
-st.sidebar.markdown("""
-- **Nombre:** Guaranda UEB
-- **Ubicación:** Cantón Guaranda
-- **Altitud:** 2,668 m s.n.m.
-- **Rango de Datos:** 2016 - 2023
-""")
-
-st.sidebar.markdown("---")
-st.sidebar.markdown("<p style='color: #64748B; font-size: 0.8rem;'>Diseñado por: Deysi Guanga<br>Maestría en Estadística y Ciencia de Datos / IA</p>", unsafe_allow_html=True)
+# SIDEBAR MEJORADO
+with st.sidebar:
+    # Logo o icono con mejor contraste
+    st.markdown("""
+    <div style='background-color: #00F2FE; padding: 20px; border-radius: 10px; margin-bottom: 20px; text-align: center;'>
+        <h1 style='color: #0e1117; margin: 0; font-size: 2em;'>⛈️</h1>
+        <h2 style='color: #0e1117; margin: 10px 0 0 0; font-size: 1.5em;'>Pronóstico Bolívar</h2>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Subtítulo
+    st.markdown("""
+    <p style='color: #31333F; font-size: 0.9em; margin-bottom: 30px;'>
+        Trabajo Final - Forecasting
+    </p>
+    """, unsafe_allow_html=True)
+    
+    st.markdown("---")
+    
+    # Configuración con mejor formato
+    st.markdown("### ⚙️ Configuración")
+    model_selected = st.selectbox(
+        "Modelo de Predicción Base",
+        options=["XGBoost (Recomendado)", "Random Forest", "LSTM", "SARIMA"],
+        index=0
+    )
+    
+    st.markdown("---")
+    
+    # Información de la estación en tarjetas claras
+    st.markdown("### 📍 Estación Base")
+    st.info("""
+    - **Nombre:** Guaranda UEB
+    - **Ubicación:** Cantón Guaranda
+    - **Altitud:** 2,668 m s.n.m.
+    - **Rango:** 2016 - 2023
+    """)
+    
+    st.markdown("---")
+    
+    # Footer del sidebar
+    st.markdown("""
+    <div style='margin-top: 50px; padding: 15px; background-color: #e8f4f8; border-radius: 8px;'>
+        <p style='color: #31333F; font-size: 0.8em; text-align: center;'>
+            <b>Diseñado por:</b><br>
+            Deysi Guanga<br>
+            Maestría en Estadística y Ciencia de Datos
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
 
 # ---------------------------------------------------------
 # CUERPO PRINCIPAL DEL DASHBOARD
