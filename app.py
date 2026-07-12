@@ -107,10 +107,47 @@ st.markdown("""
         color: #EF4444;
     }
     
-    [data-testid="stSidebar"] {
-        background-color: #0F172A;
-        border-right: 1px solid rgba(255, 255, 255, 0.05);
-    }
+   /* Sidebar con mejor contraste */
+[data-testid="stSidebar"] {
+    background-color: #1e293b;  /* Gris azulado más claro */
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* TODO el texto del sidebar - color blanco brillante */
+[data-testid="stSidebar"] *,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] .stMarkdown,
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] li,
+[data-testid="stSidebar"] a {
+    color: #ffffff !important;
+}
+
+/* Títulos del sidebar */
+[data-testid="stSidebar"] h2 {
+    color: #00F2FE !important;  /* Cyan brillante */
+    font-weight: 700;
+}
+
+/* Select boxes y inputs */
+[data-testid="stSidebar"] .stSelectbox > div,
+[data-testid="stSidebar"] .stTextInput > div {
+    background-color: #334155 !important;
+    color: #ffffff !important;
+}
+
+/* Bullet points */
+[data-testid="stSidebar"] ul li {
+    color: #e2e8f0 !important;
+}
+
+/* Enlaces */
+[data-testid="stSidebar"] a {
+    color: #00F2FE !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
