@@ -88,7 +88,7 @@ st.markdown("""
         letter-spacing: 0.05em;
     }
     .kpi-value {
-        color: #F8FAFC;
+        color: #94A3B8;
         font-size: 2.2rem;
         font-weight: 700;
         margin: 10px 0 5px 0;
