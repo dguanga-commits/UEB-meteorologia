@@ -81,7 +81,7 @@ st.markdown("""
         border-color: rgba(0, 242, 254, 0.4);
     }
     .kpi-title {
-        color: #94A3B8;
+        color: #F8FAFC;
         font-size: 0.9rem;
         font-weight: 600;
         text-transform: uppercase;
