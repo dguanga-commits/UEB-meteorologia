@@ -1,0 +1,9 @@
+   __pycache__/
+   *.pyc
+   .env
+   datos_preprocesados_diarios_py.csv
+   predicciones_test.csv
+   datos_anuales_var.csv
+   var_irf_results.csv
+   metricas_modelos.json
+   bolivar_cantones.geojson
